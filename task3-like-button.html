@@ -1,1 +1,34 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Like Button</title>\n    <script>\n        let count = 0;\n        function increment() {\n            count++;\n            document.getElementById('likeCount').innerText = count;\n        }\n    </script>\n</head>\n<body>\n    <button onclick="increment()">Like</button>\n    <p>Likes: <span id="likeCount">0</span></p>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Like Button</title>
+    <style>
+        .like-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .like-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Like Button Example</h1>
+    <button class="like-button" id="likeBtn">Like</button>
+    <p>Likes: <span id="likeCount">0</span></p>
+
+    <script>
+        let likeCount = 0;
+        document.getElementById('likeBtn').addEventListener('click', function() {
+            likeCount++;
+            document.getElementById('likeCount').innerText = likeCount;
+        });
+    </script>
+</body>
+</html>
