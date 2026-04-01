@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <style>
+        .book {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #000;
+        }
+        .selected {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book List</h1>
+    <div id="book1" class="book" onclick="selectBook(this)">Book 1</div>
+    <div id="book2" class="book" onclick="selectBook(this)">Book 2</div>
+    <div id="book3" class="book" onclick="selectBook(this)">Book 3</div>
+    <div id="book4" class="book" onclick="selectBook(this)">Book 4</div>
+
+    <script>
+        let lastSelected = null;
+
+        function selectBook(book) {
+            if (lastSelected) {
+                lastSelected.classList.remove('selected');
+            }
+            book.classList.add('selected');
+            lastSelected = book;
+        }
+    </script>
+</body>
+</html>
