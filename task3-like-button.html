@@ -1,34 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Like Button</title>
-    <style>
-        .like-button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .like-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Like Counter</title>
 </head>
 <body>
-    <h1>Like Button Example</h1>
-    <button class="like-button" id="likeBtn">Like</button>
-    <p>Likes: <span id="likeCount">0</span></p>
-
+    <h1>Like Counter</h1>
+    <button onclick="likeClick()">Like</button>
+    <p>Total Likes: <span id="count">0</span></p>
     <script>
-        let likeCount = 0;
-        document.getElementById('likeBtn').addEventListener('click', function() {
-            likeCount++;
-            document.getElementById('likeCount').innerText = likeCount;
-        });
+        let count = 0;
+        function likeClick() {
+            count++;
+            document.getElementById('count').innerHTML = count;
+        }
     </script>
 </body>
 </html>
