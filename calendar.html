@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Calendar</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .calendar { display: grid; grid-template-columns: repeat(7, 1fr); }
+        .day { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>Interactive Calendar</h1>
+    <div class="calendar" id="calendar"></div>
+
+    <script>
+        function generateCalendar(year, month) {
+            const calendarElement = document.getElementById('calendar');
+            calendarElement.innerHTML = '';
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const firstDay = new Date(year, month, 1).getDay();
+            
+            for (let i = 0; i < firstDay; i++) {
+                calendarElement.innerHTML += '<div class="day"></div>';
+            }
+            
+            for (let day = 1; day <= daysInMonth; day++) {
+                calendarElement.innerHTML += `<div class="day">${day}</div>`;
+            }
+        }
+        const today = new Date();
+        generateCalendar(today.getFullYear(), today.getMonth());
+    </script>
+</body>
+</html>
